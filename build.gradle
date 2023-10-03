@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 application {
@@ -17,7 +18,10 @@ repositories {
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.2')
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter:5.9.2',
+            'org.assertj:assertj-core:3.24.2'
+    )
     implementation 'info.picocli:picocli:4.7.5'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2'
